@@ -1,0 +1,54 @@
+*themeshow.txt*  Simple, fun theme browsing and selection for Neovim
+
+INTRODUCTION                                     *themeshow* *themeshow.nvim*
+
+themeshow.nvim lets you browse themes quickly and commit a favorite with a
+single keypress. It starts with a small curated list and expands to all
+installed colorschemes when you keep cycling.
+
+COMMANDS                                         *themeshow-commands*
+
+:ThemeShow                                       *:ThemeShow*
+    Start manual browsing. Use Left/Right to cycle. Enter saves, Esc cancels.
+
+:ThemeShowAuto [ms]                              *:ThemeShowAuto*
+    Start auto-advance browsing. Optional millisecond interval (default 2000).
+
+:ThemeShowStop                                   *:ThemeShowStop*
+    Stop browsing without saving.
+
+KEYS DURING BROWSING                             *themeshow-keys*
+
+Right
+    Next theme
+Left
+    Previous theme
+Enter
+    Save current theme as default (writes to init.lua)
+Esc
+    Cancel
+
+CONFIGURATION                                    *themeshow-config*
+
+Base list:
+    Edit the base themes inside |themeshow.lua|.
+
+Auto-advance timing:
+    :ThemeShowAuto 1500
+
+INSTALLATION                                     *themeshow-install*
+
+Lazy.nvim:
+>
+    {
+      "GiantRavens/themeshow",
+      config = function()
+        require("themeshow").setup()
+      end,
+    }
+<
+
+ABOUT                                            *themeshow-about*
+
+Author: GiantRavens
+License: MIT
